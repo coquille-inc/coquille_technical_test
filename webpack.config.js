@@ -68,6 +68,10 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
+
+    .configureWatchOptions(watchOptions => {
+      watchOptions.poll = 250; // check for changes every 250 milliseconds
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();
