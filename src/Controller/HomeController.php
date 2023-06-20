@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,12 +16,15 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', []);
     }
 
-    /**
-     * @Route("/download/{filename}")
-     */
     #[Route('/download/{filename}', name: 'home_download', methods: ['GET'])]
     public function download(string $filename): BinaryFileResponse
     {
         return $this->file(new File($filename));
+    }
+
+    #[Route('/api/helloword/{name}', name: 'api_helloword')]
+    public function apiHelloword(string $name): Response
+    {
+        return new JsonResponse('Hello ' . $name . ' !');
     }
 }

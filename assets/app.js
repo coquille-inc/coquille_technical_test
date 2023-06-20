@@ -11,3 +11,8 @@ import './styles/contact/contact.scss';
 
 require('bootstrap');
 require('bootstrap-icons/font/bootstrap-icons.css');
+
+import { createApp } from 'vue';
+import Product from './js/vue/Product.vue';
+
+createApp(Product).mount('#product_list');
