@@ -63,4 +63,13 @@ class Product
 
         return $this;
     }
+
+    public function fromArray(array $data): self {
+        $this->id = $data['id'] ?? null;
+        $this->name = $data['name'];
+        $this->description = $data['description'];
+        $this->price = $data['price'];
+
+        return $this;
+    }
 }

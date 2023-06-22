@@ -8,11 +8,17 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
 import './styles/contact/contact.scss';
+import 'vue3-toastify/dist/index.css';
 
 require('bootstrap');
 require('bootstrap-icons/font/bootstrap-icons.css');
+
+global.jQuery = require('jquery');
+var $ = global.jQuery;
+window.$ = $;
 
 import { createApp } from 'vue';
 import Product from './js/vue/Product.vue';
 
 createApp(Product).mount('#product_list');
+
