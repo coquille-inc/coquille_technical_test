@@ -42,7 +42,7 @@ export default {
         }
 
         function updateProduct(product) {
-            axios.post("/api/product/update", {
+            axios.put("/api/product/update", {
                 id: product.id,
                 name: product.name,
                 description: product.description,
@@ -61,7 +61,7 @@ export default {
         }
 
         function addProduct() {
-            axios.put("/api/product/add", {
+            axios.post("/api/product/add", {
                 name: newProduct.name,
                 description: newProduct.description,
                 price: newProduct.price

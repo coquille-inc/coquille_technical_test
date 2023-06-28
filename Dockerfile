@@ -31,9 +31,4 @@ WORKDIR /var/www
 
 COPY . /var/www
 
-RUN composer install
-
-RUN npm install
-RUN npm run build
-
 EXPOSE 8000
