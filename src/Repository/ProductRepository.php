@@ -31,9 +31,10 @@ class ProductRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Product $entity, bool $flush = false): void
+    public function remove(int $id, bool $flush = false): void
     {
-        $this->getEntityManager()->remove($entity);
+        $product = $this->find($id);
+        $this->getEntityManager()->remove($product);
 
         if ($flush) {
             $this->getEntityManager()->flush();
@@ -43,7 +44,7 @@ class ProductRepository extends ServiceEntityRepository
     public function getAllPaginated($page = 1): Paginator
     {
         $qb = $this->createQueryBuilder('p')
-            ->orderBy('p.name', 'ASC');
+            ->orderBy('p.id', 'DESC');
 
         return (new Paginator($qb))->paginate($page);
     }
