@@ -11,7 +11,8 @@ Ne pas hésiter à nous recontacter en cas de problèmes lors de l'installation.
 2. Ouvrir un terminal en mode administrateur
 3. Se placer dans le dossier du projet
 4. Executer la commande ``docker compose up --build`` pour lancer le projet
-5. Have fun !
+5. Le site devrait être accessible depuis http://localhost:8000/
+6. Have fun !
 
 **Sans Docker**
 
@@ -23,7 +24,8 @@ Ne pas hésiter à nous recontacter en cas de problèmes lors de l'installation.
 6. Exécuter la commande ``npm install``
 7. Exécuter la commande ``npm run build``
 8. Exécuter la commande ``symfony server:start`` pour lancer le projet
-9. Have fun !
+9. Le site devrait être accessible depuis http://localhost:8000/
+10. Have fun !
 
 ## Compiler le Scss
 
